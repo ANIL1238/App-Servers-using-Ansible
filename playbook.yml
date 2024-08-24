@@ -1,0 +1,9 @@
+--- # start of a ansible file 
+ - name: copy ansible data  # describe what the play or task does.
+   hosts: all  # use all target host to all run in inventory
+   become: yes # run a root user
+   tasks: # list of task to run
+     - name: copy index.html file to all app servers  # describe about the what task to do
+       copy:  # it keyword used ro copy the data form src to dest
+         src:  /usr/src/finance/index.html  # local file path 
+         dest: /opt/finance   # destination directory path on the remote hosts
